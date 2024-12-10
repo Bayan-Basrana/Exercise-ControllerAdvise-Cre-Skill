@@ -49,18 +49,18 @@ artworkService.add2(artworks);
         artworkService.delete(artworkId);
         return ResponseEntity.status(200).body(new ApiResponse("deleted successfully"));
     }
-//#16
+//#23
 @PutMapping("/like/{artworkId}")
     public ResponseEntity likeArtwork (@PathVariable Integer artworkId ){
         artworkService.likeArtwork(artworkId);
         return ResponseEntity.status(200).body(new ApiResponse("Artwork liked successfully." ));
     }
-//#17
+//#24
     @GetMapping("/top")
     public ResponseEntity topArtwork (){
         return ResponseEntity.status(200).body(artworkService.topArtwork());
     }
-//#18
+//#25
     @GetMapping("/artworkAndCountByUser/{userid}")
     public ResponseEntity getArtworkAndCountByUser (@PathVariable Integer userid){
         return ResponseEntity.status(200).body(artworkService.getArtworkAndCountByUser(userid));
